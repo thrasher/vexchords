@@ -10,15 +10,15 @@ Raphael.prototype.vexLine = function(x, y, new_x, new_y) {
   return this.path("M" + x + " " + y + "L" + new_x + " " + new_y);
 }
 
-ChordBox = function(paper, x, y, width, height) {
+ChordBox = function(paper, x, y, width, height, num_strings, num_frets) {
   this.paper = paper;
   this.x = x;
   this.y = y;
 
   this.width = (!width) ? 100 : width;
   this.height = (!height) ? 100 : height;
-  this.num_strings = 6;
-  this.num_frets = 5;
+  this.num_strings = (!num_strings) ? 6 : num_strings;
+  this.num_frets = (!num_frets) ? 5 : num_frets;
 
   this.spacing = this.width / (this.num_strings);
   this.fret_spacing = (this.height)  / (this.num_frets + 2);
